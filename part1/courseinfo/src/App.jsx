@@ -8,15 +8,20 @@ const Header = (props) => {
 const Content = (props) => {
   console.log("Content component added.")
   return (
+    <div>
+      <Part exercise={props.exercises[0]} />
+      <Part exercise={props.exercises[1]} />
+      <Part exercise={props.exercises[2]} />
+    </div>
+  )
+}
+
+const Part = (props) => {
+  console.log('Part component added.')
+  return (
     <>
       <p>
-      {props.exercises[0].part} {props.exercises[0].exercises}
-      </p>
-      <p>
-        {props.exercises[1].part} {props.exercises[1].exercises}
-      </p>
-      <p>
-        {props.exercises[2].part} {props.exercises[2].exercises}
+        {props.exercise.part} {props.exercise.exercises}
       </p>
     </>
   )
