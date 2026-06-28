@@ -22,6 +22,15 @@ const Content = (props) => {
   )
 }
 
+const Total = (props) => {
+  console.log('Total component added.')
+  return (
+    <>
+      <p>Number of exercises {props.exercises[0].exercises + props.exercises[1].exercises + props.exercises[2].exercises}</p>
+    </>
+  )
+}
+
 const App = () => {
   const course = 'Half Stack application development'
 
@@ -31,12 +40,11 @@ const App = () => {
     {part: "State of a component", exercises: 14}
   ]
 
-  const listExercises = [10, 14, 7];
-
   return (
     <div>
       <Header course={course} />
       <Content exercises={exercises} />
+      <Total exercises={exercises} />
     </div>
   )
 }
